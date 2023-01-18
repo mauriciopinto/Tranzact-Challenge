@@ -1,0 +1,25 @@
+{
+  "name": "tranzactchallenge",
+  "version": "1.0.0",
+  "description": "Tranzact Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauriciopinto/Tranzact-Challenge.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "JavaScript",
+    "HTML",
+    "CSS"
+  ],
+  "author": "mauriciopinto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mauriciopinto/Tranzact-Challenge/issues"
+  },
+  "homepage": "https://github.com/mauriciopinto/Tranzact-Challenge#readme"
+}
