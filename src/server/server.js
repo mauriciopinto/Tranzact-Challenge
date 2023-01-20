@@ -1,4 +1,5 @@
 const http = require ('http');
+const dispatcher = require ('./dispatch');
 
 class CustomServer {
     #server;
@@ -49,22 +50,50 @@ class CustomServer {
 
 
     handleRequest (request, response) {
-        const route = request.url;
+        const [route, params] = request.url.split ('?');
         
         console.log (`[${new Date ().toString()}]\t${request.method}\t'${route}'`);
         
         try {
             if (!(route in this.#routes)) {
-                throw `URL ${route} does not exist!`;
+                this.fetchResource (response, route);
+                return;
             }
             
-            this.getRouteHandler (route) (response);
+            this.getRouteHandler (route) (request, params, response);
         } catch (err) {
             console.log (`Failed to handle request with url ${route}. ${err}`);
             response.statusCode = 404;
             response.end (`Server Error. ${err}`);
+        } 
+    }
+
+    
+    fetchResource (response, path) {
+        const relativePath = path.substring (1);
+        const extension = path.split('.').pop();
+
+        switch (extension) {
+            case 'css':
+                dispatcher.dispatchCSS (response, relativePath);
+                break;
+            
+            case 'html':
+                dispatcher.renderTemplate (response, relativePath);
+                break;
+            
+            case 'json':
+                dispatcher.dispatchJSON (response, relativePath);
+                break;
+
+            case 'js':
+                dispatcher.dispatchJS (response, relativePath);
+                break;
+            
+            default:
+                dispatcher.dispatchTextPlain (response, relativePath);
+                break;
         }
-        
     }
 }
 

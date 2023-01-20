@@ -2,8 +2,58 @@
 <html>
 <head>
     <title>Premium Calculator</title>
+    <link rel="stylesheet" type="text/css" href="src/templates/styles/index.css" />
+    <script src="src/templates/scripts/data.js"></script>
+    <script src="src/templates/scripts/validation.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <h1>Premium Calculator</h1>
+    <h1 class="page-header">Premium Calculator</h1>
+    <div class="form-container">
+        <form>
+            <table class="form1-table">
+                <tbody>
+                    <tr>
+                        <td><label for="form1-date-field"><strong>Date of Birth</strong></label></td><td><input id="form1-date-field" type="date"/></td><td><p id="form1-date-alert" style="visibility: hidden; color: red; font-weight: bold;">Invalid Birth Date</p></td>
+                    </tr>
+                    <tr>
+                        <td><label for="form1-state-field"><strong>State</strong></label></td><td><select id="form1-state-field" disabled></select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="form1-plan-field"><strong>Plan</strong></label></td><td><select id="form1-plan-field" disabled></select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="form1-age-field"><strong>Age</strong></label></td><td><input id="form1-age-field" type="number"/><br></td><td></td><td><p id="form1-age-alert" style="visibility: hidden;color: red; font-weight: bold;">Age does not match birth date</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="premium-container">
+        <div class="premium-form-container">
+            <button class="premium-form-button" id="premium-form-button">Get Premium</button>
+            <br>
+            <div id="premium-form-period-container">
+                <label for="premium-form-period-field">Period</label>
+                <select class="form-select" id="premium-form-period-field" disabled>
+                    <option value="Monthly">Monthly</option>
+                    <option value="Quarterly">Quarterly</option>
+                    <option value="Semiannual">Semi-Annual</option>
+                    <option value="Annual">Annual</option>
+                </select>
+            </div>
+        </div>
+        <div class="premium-display-container">
+            <table class="premium-display-table">
+                <thead>
+                    <tr>
+                        <td><strong>Carrier</strong></td><td><strong>Premium</strong></td><td id="premium-display-table-period"><strong>Monthly</strong></td>
+                    </tr>
+                </thead>
+                <tbody id="premium-display-table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
