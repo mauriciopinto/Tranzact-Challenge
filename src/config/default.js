@@ -1,6 +1,9 @@
+require('dotenv').config ();
+
 const config = {
-    host: 'localhost',
-    port: 8000,
-}
+    host: process.env.HOST,
+    port: process.env.PORT,
+    baseURL: `http://${process.env.HOST}:${process.env.PORT}`
+};
 
 module.exports = config;
