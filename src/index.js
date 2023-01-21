@@ -63,7 +63,6 @@ function dispatchPremiums (request, params, response) {
     }
 }
 
-
 const server = new CustomServer (config, renderIndex);
 
 server.setRoute ('/data/states', dispatchStates);
