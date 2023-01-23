@@ -17,7 +17,7 @@ HOST=localhost
 PORT=8000
 ```
 
-Once that is done, run the following command from the root folder:
+Once that is done, run the following commands from the root folder:
 
 ```
 npm install   # Install dependencies
