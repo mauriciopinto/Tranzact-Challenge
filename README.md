@@ -10,7 +10,7 @@ This project was developed using [NodeJS](https://nodejs.dev/en/) For the backen
 For the frontend, I mainly used plain HTML, plain javascript and plain CSS. I imported the [axios](https://axios-http.com/docs/intro) library for http requests from client side.
 
 ## How to run
-Clone this repository, move to the root folder and create the file `.env`. Then, enter the following fields:
+Clone this repository, move to the root folder and create the file `.env`. Then, enter the following fields this file:
 
 ```
 HOST=localhost
@@ -19,7 +19,10 @@ PORT=8000
 
 Once that is done, run the following command from the root folder:
 
-`npm start`
+```
+npm install   # Install dependencies
+npm start     # Run app
+```
 
 The server will print the default URL for the project. This URL is the one that will render the HTML index page. Open a web browser and browse said URL.
 
