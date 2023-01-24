@@ -2,7 +2,7 @@
 Repository for the Tranzact coding challenge.
 
 ## Tools Used
-This project was developed using [NodeJS](https://nodejs.dev/en/) For the backend, which handles requests for HTML templates, JSON files, and any other resources in the working directory, I made use of the following NodeJS libraries:
+This project was developed using [NodeJS](https://nodejs.dev/en/) (version 16.13.2) For the backend, which handles requests for HTML templates, JSON files, and any other resources in the working directory, I made use of the following NodeJS libraries:
 
 - [HTTP](https://nodejs.org/api/http.html)
 - [File System](https://nodejs.org/api/fs.html)
